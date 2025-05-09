@@ -1,0 +1,16 @@
+@mixin flex($j-content:left, $a-items:center){
+    display: flex;
+    justify-content: $j-content;
+    align-items: $a-items;
+}
+
+@mixin btn{
+    border: none;
+    padding: 1rem 2rem;
+    background: linear-gradient(to right, $limeGreen-color, $brightCyan-color);
+    color: $white-color;
+    border-radius: 20px;
+    font-size: .875rem;
+    font-weight: 600;
+    cursor: pointer;
+}
