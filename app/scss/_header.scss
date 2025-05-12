@@ -1,0 +1,84 @@
+.header{
+    background-color: $white-color;
+    nav{
+        @include flex(space-between);
+
+        padding: 18px 22px;
+        //border: 1px solid red;
+    }
+
+    &__logo {
+        display: block;
+        width: $logo-width;
+        height: $logo-height;
+    }
+
+    &__menu {
+        > span{
+            display: block;
+            width: $hamburger-width;
+            height: $hamburger-line-height;
+            background-color: $darkBlue;
+
+            &:not(:last-child){
+                margin-bottom: 3px;
+            }
+            
+        }
+
+        @include breakpoint(desktop){
+            display: none;
+        }
+    }
+
+    &__link{
+        a{
+            position: relative;
+            color: $primary-text-color;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: all 300ms ease-in-out;
+
+            &:not(:last-child){
+                margin-right: 30px;
+            }
+
+            &:hover{
+                color: $darkBlue;
+            }
+
+            &:hover::after{
+                position: absolute;
+                top: 47px;
+                left: 0;
+                content: "";
+                display: block;
+                width: 100%;
+                height: 4px;
+                border-radius: 3px;
+                background: linear-gradient(to right, $limeGreen-color, $brightCyan-color);
+            }
+        }
+        
+        @include breakpoint(small){
+            display: none;
+        }
+
+        @include breakpoint(desktop){
+            display: block;
+        }
+    }
+
+    &__button{
+        @include btn;
+        
+        @include breakpoint(small){
+                display: none;
+        }
+        
+        @include breakpoint(desktop){
+            display: block;
+        }
+    }
+  
+}
