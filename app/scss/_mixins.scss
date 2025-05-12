@@ -14,3 +14,17 @@
     font-weight: 600;
     cursor: pointer;
 }
+
+$breakpoint: (
+    "small" : 0,
+    "tablet" : 481px,
+    "desktop" : 768px,
+    "large" : 1280px
+);
+
+@mixin breakpoint($size){
+    @media (min-width: map-get($breakpoint, $size)){
+        @content;
+    }
+
+}

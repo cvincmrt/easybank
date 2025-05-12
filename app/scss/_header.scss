@@ -3,7 +3,7 @@
     nav{
         @include flex(space-between);
 
-        padding: 18px;
+        padding: 18px 22px;
         //border: 1px solid red;
     }
 
@@ -25,6 +25,10 @@
             }
             
         }
+
+        @include breakpoint(desktop){
+            display: none;
+        }
     }
 
     &__link{
@@ -33,7 +37,7 @@
             color: $primary-text-color;
             font-size: 1rem;
             font-weight: 600;
-            transition: all 200ms ease-in-out;
+            transition: all 300ms ease-in-out;
 
             &:not(:last-child){
                 margin-right: 30px;
@@ -51,14 +55,37 @@
                 display: block;
                 width: 100%;
                 height: 4px;
+                border-radius: 3px;
                 background: linear-gradient(to right, $limeGreen-color, $brightCyan-color);
             }
+        }
+        
+        @include breakpoint(small){
+            display: none;
+        }
+
+        @include breakpoint(desktop){
+            display: block;
         }
     }
 
     &__button{
         @include btn;
+
+        opacity: .7;
+        transition: all 300ms ease-in-out;
+
+        &:hover{
+            opacity: 1;
+        }
+
+        @include breakpoint(small){
+                display: none;
+        }
         
+        @include breakpoint(desktop){
+            display: block;
+        }
     }
   
 }
